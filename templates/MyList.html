@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+         background-color:#F0F8FF
+        }
+    </style>
+</head>
+<body>
+{%for i in film%}
+<div>
+    <h3>Id:{{i.imDBId}}</h3>
+    <h3>Title:{{i.title}}</h3>
+</div>
+<hr>
+{%endfor%}
+<br>
+<form action="/update-list" method="post">
+    <input type="text" placeholder="write id of title" name="imdbid1">
+    <input type="text" placeholder="how to change" name="title">
+    <button type="submit">Update title</button>
+</form>
+<form action="/delete-list" method="post">
+    <input type="text" placeholder="write id of title" name="imdbid">
+    <button type="submit">Delete</button>
+</form>
+</body>
+</html>
